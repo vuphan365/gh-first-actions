@@ -11,6 +11,6 @@ jobs:
           with:
             node-version: 20
         - name: Install Dependencies
-          run: npm install
+          run: cd second-action-react && npm install
         - name: Run Tests
-          run: npm test
+          run:  cd second-action-react && npm test
