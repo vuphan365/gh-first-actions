@@ -1,0 +1,8 @@
+name: Solve Problem Section 3
+on: issues
+jobs:
+  step-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output the context
+        run: echo "The context is ${{ toJson(github.event) }}"
