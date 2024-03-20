@@ -36,7 +36,13 @@ jobs:
             second-action-react/dist
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+      - name: Output files
+        run: ls
       - name: Deploy
-        run: ls second-action-react/dist
+        run: echo "Deploying"
